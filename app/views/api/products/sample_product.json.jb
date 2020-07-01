@@ -1,1 +1,6 @@
-{ sample: @sample_product }
+{
+  name: @sample_product.name,
+  price: @sample_product.price,
+  description: @sample_product.description,
+  image_url: @sample_product.image_url,
+}

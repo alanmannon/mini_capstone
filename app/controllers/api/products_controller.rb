@@ -1,8 +1,7 @@
 class Api::ProductsController < ApplicationController
   def sample_product
-    x = Product.count
-    random_number = rand(1..x)
-    @sample_product = Product.find_by(id: random_number)
+    #@sample_product = Product.order(Arel.sql("RANDOM()")).first
+    @sample_product = Product.all.sample
     render "sample_product.json.jb"
   end
 
