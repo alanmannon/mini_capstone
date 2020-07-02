@@ -14,4 +14,10 @@ class Api::ProductsController < ApplicationController
     @rice = Product.find_by(id: 4)
     render "rice.json.jb"
   end
+
+  def specific_product
+    user = params["chosen_product"].to_i
+    @chosen = Product.find_by(id: user)
+    render "specific_product.json.jb"
+  end
 end
