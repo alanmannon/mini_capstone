@@ -1,6 +1,0 @@
-{
-  name: @rice.name,
-  price: @rice.price,
-  description: @rice.description,
-  image_url: @rice.image_url,
-}

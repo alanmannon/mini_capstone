@@ -1,23 +1,11 @@
 class Api::ProductsController < ApplicationController
-  def sample_product
-    #@sample_product = Product.order(Arel.sql("RANDOM()")).first
-    @sample_product = Product.all.sample
-    render "sample_product.json.jb"
+  def index
+    @products = Product.all
+    render "index.json.jb"
   end
 
-  def gasoline
-    @gas = Product.first
-    render "gasoline.json.jb"
-  end
-
-  def rice
-    @rice = Product.find_by(id: 4)
-    render "rice.json.jb"
-  end
-
-  def specific_product
-    user = params["chosen_product"].to_i
-    @chosen = Product.find_by(id: user)
-    render "specific_product.json.jb"
+  def show
+    @products = Product.find_by(id: params[:id])
+    render "show.json.jb"
   end
 end

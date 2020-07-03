@@ -1,6 +1,0 @@
-{
-  name: @gas.name,
-  price: @gas.price,
-  description: @gas.description,
-  image_url: @gas.image_url,
-}
