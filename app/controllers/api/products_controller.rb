@@ -21,6 +21,10 @@ class Api::ProductsController < ApplicationController
       description: params[:description],
     )
     if @product.save
+      # @image = Image.new(
+      #   url: params[:url]
+      #   product_id: [@product.id]
+      # )
       render "show.json.jb"
     else
       render "errors.json.jb"

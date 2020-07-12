@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   validates :price, numericality: { only_integer: true }
 
   belongs_to :supplier
+  has_many :images
 
   # def supplier
   #   supplier = Supplier.find_by(id: supplier_id)
