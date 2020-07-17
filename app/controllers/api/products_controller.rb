@@ -1,4 +1,6 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_admin, only: [:create]
+
   def index
     @products = Product.all
 
@@ -48,5 +50,11 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     @product.destroy
     render json: { message: "file deleted" }
+  end
+
+  def authenticate_admin
+    unless current_user && current_user.admin
+      render jason: {}, status: unauthorized
+    end
   end
 end
