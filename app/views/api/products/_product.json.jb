@@ -6,4 +6,5 @@
   description: product.description,
   in_stock: product.in_stock,
   supplier_info: product.supplier,
+  categories: product.categories,
 }

@@ -1,7 +1,5 @@
 @products.map do |product|
-  if current_user
-    render partial: "product.json.jb", locals: { product: product }
-  else
-    render json: {}
-  end
+  #if current_user
+  render partial: "product.json.jb", locals: { product: product }
+  #end
 end
