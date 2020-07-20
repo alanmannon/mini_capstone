@@ -1,0 +1,4 @@
+{
+  product_id: @cart.product_id,
+  quantity: @cart.quantity
+}
